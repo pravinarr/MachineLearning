@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//log4j/log4j Configuration//EN" "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="Appender1" class="org.apache.log4j.ConsoleAppender">
+       <layout class="org.apache.log4j.PatternLayout"> 
+          <param name="ConversionPattern" value="%-7p %d [%t] %c %x - %m%n"/> 
+       </layout> 
+    </appender>
+ 
+    <appender name="controller" class="org.apache.log4j.FileAppender">
+       <param name="File" value="controllernew.log" />
+       <layout class="org.apache.log4j.PatternLayout"> 
+          <param name="ConversionPattern" value="%d [%t]- %m%n"/> 
+       </layout> 
+    </appender>
+     <appender name="problemsolver" class="org.apache.log4j.FileAppender">
+       <param name="File" value="problemsolver.log" />
+       <layout class="org.apache.log4j.PatternLayout"> 
+          <param name="ConversionPattern" value="%d [%t]- %m%n"/> 
+       </layout> 
+    </appender>
+     <appender name="knowledge" class="org.apache.log4j.FileAppender">
+       <param name="File" value="knowledge.log" />
+       <layout class="org.apache.log4j.PatternLayout"> 
+          <param name="ConversionPattern" value="%d [%t]- %m%n"/> 
+       </layout> 
+    </appender>
+    <appender name="inconsistency" class="org.apache.log4j.FileAppender">
+       <param name="File" value="inconsistency.log" />
+       <layout class="org.apache.log4j.PatternLayout"> 
+          <param name="ConversionPattern" value="%d [%t]- %m%n"/> 
+       </layout> 
+    </appender>
+    <appender-ref ref="Appender1" /> 
+    
+     <logger name="test.Test" additivity="false">
+    <level value="all"/>
+    <appender-ref ref="Appender1" /> 
+    <appender-ref ref="controller" /> 
+  </logger>
+   <logger name="inconsistency.Inconsistency" additivity="false">
+    <level value="all"/>
+         <appender-ref ref="Appender1" />
+         <appender-ref ref="controller" />   
+  </logger>
+   <logger name="problemsolver.ProblemSolver" additivity="false">
+    <level value="all"/>
+         <appender-ref ref="Appender1" /> 
+         <appender-ref ref="controller" /> 
+  </logger>
+   <logger name="knowledge.KnowledgeBean" additivity="false">
+    <level value="all"/>
+         <appender-ref ref="Appender1" /> 
+         <appender-ref ref="controller" /> 
+  </logger> 
+   <logger name="dataload.DataReShuffler" additivity="false">
+    <level value="all"/>
+         <appender-ref ref="Appender1" /> 
+         <appender-ref ref="controller" /> 
+  </logger> 
+<logger name="learner.InitialLearner" additivity="false">
+    <level value="all"/>
+         <appender-ref ref="Appender1" /> 
+         <appender-ref ref="controller" /> 
+  </logger> 
+
+ <!--  <logger name="test.Test" additivity="false">
+    <level value="all"/>
+     <appender-ref ref="controller" /> 
+  </logger>
+   <logger name="inconsistency.Inconsistency" additivity="false">
+    <level value="all"/>
+     <appender-ref ref="inconsistency" /> 
+  </logger>
+   <logger name="problemsolver.ProblemSolver" additivity="false">
+    <level value="all"/>
+     <appender-ref ref="problemsolver" /> 
+  </logger>
+   <logger name="knowledge.KnowledgeBean" additivity="false">
+    <level value="all"/>
+     <appender-ref ref="knowledge" /> 
+  </logger>  -->
+  
+  <!-- <root level="all">
+      <appender-ref ref="Appender1"/>
+      <appender-ref ref="Appender2"/>
+    </root> 
+     -->
+</log4j:configuration>

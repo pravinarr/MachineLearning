@@ -1,0 +1,12 @@
+/arffCreator/
+/conf.properties
+/controller/
+/dataclean/
+/dataload/
+/inconsistency/
+/knowledge/
+/learner/
+/logger/
+/problemsolver/
+/test/
+/ui/
